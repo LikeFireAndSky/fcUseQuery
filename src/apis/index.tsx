@@ -14,4 +14,32 @@ const getComments = async (props: string) => {
 	return response.data;
 };
 
-export { getPosts, getComments };
+const deletePost = async (props: string) => {
+	const response = await axios.delete(
+		`https://jsonplaceholder.typicode.com/posts/${props}`,
+	);
+	return response.data;
+};
+
+const updateTitle = async (props: string) => {
+	const response = await axios.put(
+		`https://jsonplaceholder.typicode.com/posts/${props}`,
+		{ title: 'Updated Title' },
+	);
+	return response.data;
+};
+const initialUrl = 'https://swapi.dev/api/people/';
+
+const getInfiniteScroll = async (url: string) => {
+	const response = await axios.get(url);
+	return response.data;
+};
+
+export {
+	getPosts,
+	getComments,
+	deletePost,
+	updateTitle,
+	getInfiniteScroll,
+	initialUrl,
+};

@@ -6,6 +6,7 @@ import {
 	Button,
 } from '@material-tailwind/react';
 import { PostItemProps } from '../../../types';
+import PostDelete from '../PostDelete';
 
 import useNavigation from '../../../utills';
 
@@ -32,6 +33,7 @@ const PostItem: React.FC<PostItemProps> = ({
 					<Button onClick={handleNextPage} size="lg">
 						Read More
 					</Button>
+					<PostDelete props={id} />
 				</CardFooter>
 			</Card>
 		</div>

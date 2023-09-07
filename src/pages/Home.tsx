@@ -5,7 +5,7 @@ import Loading from '../components/Common/Loading';
 
 // IMPORT HOOKS //
 import usePagination from '../hooks/usePagination';
-
+import usePrefetch from '../hooks/usePrefetch';
 import useQueryData from '../hooks/useQueryData';
 
 // IMPORT APIS //
@@ -14,11 +14,18 @@ import { getPosts } from '../apis';
 const Home = () => {
 	const { currentPage, handleNextPage, handlePrevPage } = usePagination();
 
+	usePrefetch({
+		page: currentPage,
+		maxPostPage: 10,
+		params: 'posts',
+		fn: getPosts,
+	});
+
 	const { data, isLoading, error } = useQueryData({
 		params: String(currentPage),
 		key: 'posts',
-		cache: 10,
-		stale: 5,
+		cache: 0,
+		stale: 0,
 		fn: getPosts,
 	});
 

@@ -13,6 +13,7 @@ function useQueryData({ params, key, cache, stale, fn }: Props) {
 	const Option = {
 		cacheTime: 1000 * 60 * cache,
 		staleTime: 1000 * 60 * stale,
+		keepPreviousData: true,
 	};
 
 	const { data, isLoading, error } = useQuery(
