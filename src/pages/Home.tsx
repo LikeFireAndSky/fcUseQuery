@@ -2,6 +2,7 @@
 import Post from '../components/Post';
 import Error from '../components/Common/Error';
 import Loading from '../components/Common/Loading';
+import Buttons from '../components/Common/Button';
 
 // IMPORT HOOKS //
 import usePagination from '../hooks/usePagination';
@@ -45,6 +46,7 @@ const Home = () => {
 				handlePrevPage={handlePrevPage}
 				currentPage={currentPage}
 			/>
+			<Buttons />
 		</div>
 	);
 };
