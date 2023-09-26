@@ -1,9 +1,11 @@
-import { Button } from '@material-tailwind/react';
+import { Button, Checkbox, Input } from '@material-tailwind/react';
 import { useState } from 'react';
 
 const Buttons = () => {
 	const [color, setColor] = useState('bg-red-700');
 	const [text, setText] = useState('Change to Blue');
+
+	const [checked, setChecked] = useState(false);
 
 	const handleClick = () => {
 		if (color === 'bg-red-700') {
@@ -18,9 +20,14 @@ const Buttons = () => {
 	const ButtonClassName = `${color}`;
 
 	return (
-		<Button className={ButtonClassName} onClick={handleClick}>
-			{text}
-		</Button>
+		<div>
+			<Button className={ButtonClassName} onClick={handleClick}>
+				{text}
+			</Button>
+			<div>
+				<Checkbox crossOrigin="anonymous" label="REMEBER ME" />
+			</div>
+		</div>
 	);
 };
 

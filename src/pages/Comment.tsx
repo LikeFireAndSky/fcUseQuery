@@ -9,6 +9,7 @@ import useQueryData from '../hooks/useQueryData';
 import View from '../components/View';
 import Loading from '../components/Common/Loading';
 import Error from '../components/Common/Error';
+import Marksdown from '../components/Common/Marksdown';
 
 const Post = () => {
 	const params = useSearchPrameter();
@@ -28,6 +29,7 @@ const Post = () => {
 	return (
 		<div className="w-full h-full flex flex-col items-center bg-blue-gray-300 gap-3">
 			<View data={data} params={params} />
+			<Marksdown />
 		</div>
 	);
 };

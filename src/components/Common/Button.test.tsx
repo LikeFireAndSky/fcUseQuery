@@ -16,3 +16,14 @@ test('button has correct initial color', () => {
 	console.log('테스트 성공');
 	expect(colorButton).toHaveTextContent('Change to Red');
 });
+
+test('initial conditions', () => {
+	render(<Buttons />);
+	// check that the button starts out enabled
+	const colorButton = screen.getByRole('button', { name: 'Change to Blue' });
+	expect(colorButton).toBeEnabled();
+
+	// check that the checkbox starts out unchecked
+	const checkbox = screen.getByRole('checkbox');
+	expect(checkbox).not.toBeChecked();
+});
